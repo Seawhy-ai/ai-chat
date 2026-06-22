@@ -1466,18 +1466,17 @@ window.showCaseInCategory = function(catIdx, caseIdx){
   var c = cat.cases[caseIdx];
   var total = cat.cases.length;
   var nav = '<div style="display:flex;gap:8px;justify-content:center;align-items:center;margin:12px 0">';
-  if(caseIdx > 0) nav += '<button class="doc-btn secondary" onclick="showCaseInCategory('+catIdx+','+(caseIdx-1)+')">\u25c0 \u4e0a\u4e00\u4e2a</button>';
+  if(caseIdx > 0) nav += '<button class="doc-btn secondary" onclick="showCaseInCategory('+catIdx+','+(caseIdx-1)+')">◀ 上一个</button>';
   nav += '<span style="padding:8px 14px;font-size:13px;color:var(--text2);font-weight:600">'+(caseIdx+1)+' / '+total+'</span>';
-  if(caseIdx < total-1) nav += '<button class="doc-btn secondary" onclick="showCaseInCategory('+catIdx+','+(caseIdx+1)+')">\u4e0b\u4e00\u4e2a \u25b6</button>';
+  if(caseIdx < total-1) nav += '<button class="doc-btn secondary" onclick="showCaseInCategory('+catIdx+','+(caseIdx+1)+')">下一个 ▶</button>';
   nav += '</div>';
   window._caseIdx = caseIdx;
   document.getElementById("caseViewTitle").textContent = cat.name;
   document.getElementById("caseBackBtn").style.display = "block";
   document.getElementById("caseList").innerHTML = "";
-  document.getElementById("caseReaderArea").innerHTML = '<div class="case-header" style="text-align:center;padding:8px 0 12px"><h2 style="font-size:18px;font-weight:700;margin-bottom:4px">'+c.title+'</h2><p style="font-size:12px;color:var(--text2)">'+cat.court+' \u00b7 \u7b2c'+(caseIdx+1)+'/'+total+'\u4e2a\u6848\u4f8b \u00b7 \u5168\u6587\u7ea6'+Math.round(c.content.length/1000)+'\u5343\u5b57</p></div>'+nav+'<div class="case-reader">'+c.content.replace(/\\n/g,"<br>")+'</div>'+nav;
+  document.getElementById("caseReaderArea").innerHTML = '<div class="case-header" style="text-align:center;padding:8px 0 12px"><h2 style="font-size:18px;font-weight:700;margin-bottom:4px">'+c.title+'</h2><p style="font-size:12px;color:var(--text2)">'+cat.court+' · 第'+(caseIdx+1)+'/'+total+'个案例 · 全文约'+Math.round(c.content.length/1000)+'千字</p></div><div class="case-reader">'+c.content.replace(/\n/g,"<br>")+'</div>'+nav;
   document.getElementById("caseReaderArea").scrollIntoView({behavior:"smooth"});
-};
-window.closeCaseReader = function(){ document.getElementById("caseBackBtn").style.display="none"; document.getElementById("caseViewTitle").textContent="案例数据库"; document.getElementById("caseReaderArea").innerHTML=""; renderCaseList(); };
+};window.closeCaseReader = function(){ document.getElementById("caseBackBtn").style.display="none"; document.getElementById("caseViewTitle").textContent="案例数据库"; document.getElementById("caseReaderArea").innerHTML=""; renderCaseList(); };
 }catch(e){ console.error("Case init:",e); }
 })();
 </script>

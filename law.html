@@ -245,6 +245,77 @@
     .help-section h4 .ico svg{width:16px;height:16px}
     .help-section p{font-size:11px;color:var(--text2);line-height:1.55;margin:0}
     .help-section .help-example{font-size:10px;color:var(--accent);margin-top:4px;font-style:italic}
+
+    /* ===== QUIZ & DOC VIEWS ===== */
+    #quizView,#docView{flex:1;display:none!important;flex-direction:column;overflow:hidden;background:var(--bg)}
+    #quizView.show,#docView.show{display:flex!important}
+    #quizView .wx-nav,#docView .wx-nav{border-bottom:1px solid var(--card-border)}
+    #quizView .quiz-body,#docView .doc-body{flex:1;overflow-y:auto;padding:16px 18px 30px;-webkit-overflow-scrolling:touch;max-width:600px;margin:0 auto;width:100%}
+    .quiz-header,.doc-header{text-align:center;padding:8px 0 16px}
+    .quiz-header h2,.doc-header h2{font-size:18px;font-weight:700;margin-bottom:4px}
+    .quiz-header p,.doc-header p{font-size:12px;color:var(--text2)}
+    .quiz-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+    .quiz-stat{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:8px 14px;font-size:12px;text-align:center;min-width:70px}
+    .quiz-stat .qs-num{font-size:22px;font-weight:800;color:var(--accent);line-height:1.2}
+    .quiz-stat .qs-label{font-size:10px;color:var(--text2)}
+    .quiz-subject-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;justify-content:center}
+    .quiz-subject-filter button{padding:6px 13px;border:1px solid var(--card-border);border-radius:16px;background:var(--card-bg);color:var(--text);font-size:12px;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+    .quiz-subject-filter button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .quiz-mode-bar{display:flex;gap:8px;margin-bottom:16px;justify-content:center}
+    .quiz-mode-btn{padding:8px 18px;border:2px solid var(--card-border);border-radius:16px;background:var(--card-bg);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;flex:1;max-width:160px}
+    .quiz-mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .quiz-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:20px 18px;margin-bottom:14px;transition:all .2s}
+    .quiz-q-num{font-size:11px;color:var(--text2);margin-bottom:6px;font-weight:600}
+    .quiz-q-text{font-size:15px;line-height:1.6;margin-bottom:14px;font-weight:500}
+    .quiz-options{display:flex;flex-direction:column;gap:8px}
+    .quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border:2px solid var(--card-border);border-radius:12px;cursor:pointer;transition:all .15s;font-size:14px;line-height:1.5;background:var(--bg)}
+    .quiz-opt.selected{border-color:var(--accent);background:var(--accent-light)}
+    .quiz-opt.correct-answer{border-color:#27ae60;background:rgba(39,174,96,0.08)}
+    .quiz-opt.wrong-answer{border-color:#e74c3c;background:rgba(231,76,60,0.08)}
+    .quiz-opt.disabled{pointer-events:none;opacity:.9}
+    .quiz-opt-prefix{font-weight:700;font-size:14px;color:var(--accent);flex-shrink:0;width:20px}
+    .quiz-explain{display:none;margin-top:12px;padding:12px 14px;background:var(--input-bg);border-radius:12px;font-size:13px;line-height:1.65;color:var(--text);border-left:3px solid var(--accent)}
+    .quiz-explain.show{display:block}
+    .quiz-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .quiz-btn{padding:8px 16px;border:none;border-radius:14px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+    .quiz-btn.primary{background:var(--accent);color:#fff}
+    .quiz-btn.secondary{background:var(--input-bg);color:var(--text);border:1px solid var(--card-border)}
+    .quiz-btn:disabled{opacity:.5;pointer-events:none}
+    .quiz-empty{text-align:center;padding:40px 20px;color:var(--text2)}
+    .quiz-pagination{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .quiz-page-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border)}
+    .quiz-page-dot.current{background:var(--accent);transform:scale(1.4)}
+    .quiz-result{text-align:center;padding:24px 18px}
+    .quiz-result .qr-score{font-size:48px;font-weight:800;color:var(--accent);line-height:1.2}
+    .quiz-result .qr-label{font-size:14px;color:var(--text2);margin-bottom:18px}
+    .quiz-progress-bar{width:100%;height:6px;background:var(--card-border);border-radius:3px;margin:10px 0 16px;overflow:hidden}
+    .quiz-progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .3s}
+    .doc-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+    .doc-type-card{background:var(--card-bg);border:2px solid var(--card-border);border-radius:14px;padding:14px 12px;cursor:pointer;transition:all .15s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+    .doc-type-card.selected{border-color:var(--accent);background:var(--accent-light)}
+    .doc-type-card .dt-icon{font-size:28px;line-height:1}
+    .doc-type-card .dt-name{font-size:13px;font-weight:600}
+    .doc-type-card .dt-desc{font-size:10px;color:var(--text2);line-height:1.4}
+    .doc-form{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:18px;margin-bottom:14px}
+    .doc-form h3{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+    .doc-field{margin-bottom:12px}
+    .doc-field label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px}
+    .doc-field input,.doc-field textarea{width:100%;background:var(--input-bg);border:2px solid var(--input-border);border-radius:12px;padding:10px 14px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color .2s;resize:vertical}
+    .doc-field input:focus,.doc-field textarea:focus{border-color:var(--accent)}
+    .doc-field textarea{min-height:80px}
+    .doc-result{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:18px;margin-bottom:14px;display:none}
+    .doc-result.show{display:block}
+    .doc-result h3{font-size:15px;font-weight:700;margin-bottom:8px}
+    .doc-result-content{background:var(--bg);border:1px solid var(--card-border);border-radius:12px;padding:16px;font-size:14px;line-height:1.85;white-space:pre-wrap;word-break:break-word;max-height:60vh;overflow-y:auto;font-family:"Noto Serif SC","PingFang SC",serif}
+    .doc-btn-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .doc-btn{padding:10px 18px;border:none;border-radius:14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;display:flex;align-items:center;gap:4px}
+    .doc-btn.primary{background:var(--accent);color:#fff}
+    .doc-btn.secondary{background:var(--input-bg);color:var(--text);border:1px solid var(--card-border)}
+    .doc-btn:disabled{opacity:.5;pointer-events:none}
+    .doc-loading{text-align:center;padding:30px;color:var(--text2)}
+    .doc-loading .spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--card-border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
   </style>
 </head>
 <body>
@@ -277,7 +348,7 @@
       </div>
       <span class="mc-arrow">›</span>
     </div>
-    <div class="model-card" onclick="showComingSoon('学习题库')">
+    <div class="model-card" onclick="showQuiz()">
       <div class="mc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
       <div class="mc-info">
         <div class="mc-name">学习题库</div>
@@ -285,7 +356,7 @@
       </div>
       <span class="mc-arrow">›</span>
     </div>
-    <div class="model-card" onclick="showComingSoon('法律文书生成')">
+    <div class="model-card" onclick="showDocGen()">
       <div class="mc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
       <div class="mc-info">
         <div class="mc-name">法律文书生成</div>
@@ -445,9 +516,40 @@
     </div>
 
     <div class="about-credit">
-      研究参考：西南民族大学法学院 徐子涵团队 · 2026年5月<br>
-      LexPilot © 2026 · 网页由ccy制作
+      AI训练：徐子涵团队<br>网页制作：曹春杨<br>西南民族大学法学院 · 2026年5月<br>LexPilot © 2026
     </div>
+  </div>
+</div>
+
+<!-- ===== QUIZ VIEW ===== -->
+<div id="quizView">
+  <div class="wx-nav">
+    <button class="back" onclick="goHome()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <span class="title">学习题库</span>
+  </div>
+  <div class="quiz-body">
+    <div class="quiz-header"><h2>法学学习题库</h2><p id="quizSubtitle">法考真题 · 章节练习</p></div>
+    <div class="quiz-stats" id="quizStats"></div>
+    <div class="quiz-subject-filter" id="quizSubjectFilter"></div>
+    <div class="quiz-mode-bar">
+      <button class="quiz-mode-btn active" id="modePractice" onclick="setQuizMode('practice')">练习模式</button>
+      <button class="quiz-mode-btn" id="modeExam" onclick="setQuizMode('exam')">考试模式</button>
+    </div>
+    <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>
+    <div id="quizContent"></div>
+  </div>
+</div>
+<!-- ===== DOC GEN VIEW ===== -->
+<div id="docView">
+  <div class="wx-nav">
+    <button class="back" onclick="goHome()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <span class="title">法律文书生成</span>
+  </div>
+  <div class="doc-body">
+    <div class="doc-header"><h2>AI 法律文书生成</h2><p id="docSubtitle">选择文书类型，填写关键信息，一键生成</p></div>
+    <div class="doc-type-grid" id="docTypeGrid"></div>
+    <div id="docFormArea"></div>
+    <div id="docResultArea"></div>
   </div>
 </div>
 
@@ -490,7 +592,7 @@
 // ============================================================
 
 // ----- CONFIG -----
-var DEFAULTS = { apiKey: "sk-e9168099b0f24e0a948cbd9b98038d8e", model: "deepseek-chat" };
+var DEFAULTS = { apiKey: "sk-6d616396f6e14e418a1954f920401b5e", model: "deepseek-v4-flash" };
 var SETTINGS = {};
 try { var s = JSON.parse(localStorage.getItem("lexpilot-config") || "{}"); SETTINGS = Object.assign({}, DEFAULTS, s); } catch(e) { SETTINGS = Object.assign({}, DEFAULTS); }
 
@@ -720,7 +822,7 @@ function showAbout() {
 // SCREEN MANAGEMENT
 // ============================================================
 function hideAllViews() {
-  ["homeScreen","chatView","dbView","aboutView"].forEach(function(id) {
+  ["homeScreen","chatView","dbView","aboutView","quizView","docView"].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.classList.remove("show");
   });
@@ -1063,5 +1165,412 @@ function installApp() {
   }
 }
 </script>
+
+<script>
+// ============================================================
+// QUIZ BANK (independent module)
+// ============================================================
+(function(){
+try {
+
+var Q = {
+  "刑法": [
+    {q:"为在社会上立功表现，A点火烧房子，在消防员来时又扑灭了火，烧毁了一些物品。A的行为构成什么罪？", o:["放火罪","失火罪","故意毁坏财物罪","寻衅滋事罪"], a:0, e:"放火罪是危险犯，只要放火行为足以危害公共安全即构成既遂，事后扑灭火焰不影响定罪。"},
+    {q:"A与B都是吸毒者，A将毒品以购买价转让给B，A是否构成贩卖毒品罪？", o:["构成，有偿转让即贩卖","不构成，平价转让无牟利","不构成，吸毒者之间转让属自用","构成非法持有毒品罪"], a:0, e:"吸毒者有偿转让毒品给他人并获取对价，属于贩卖毒品行为。即使以购买价转让，其行为已进入流通环节。"},
+    {q:"为躲避公安部门的酒驾排查，开车向交警冲撞，构成什么罪？", o:["妨害公务罪","故意杀人罪","以危险方法危害公共安全罪","袭警罪"], a:0, e:"行为人以暴力方法阻碍人民警察依法执行公务，构成妨害公务罪。不足以推定具有杀人故意。"},
+    {q:"丙在厂区开车从A车间运货到B车间，喝了点酒，倒车时撞倒原料箱砸死了人。丙构成什么罪？", o:["重大责任事故罪","交通肇事罪","过失致人死亡罪","危险驾驶罪"], a:0, e:"在生产、作业中违反安全管理规定造成重大伤亡事故，构成重大责任事故罪。厂区内生产作业不适用交通肇事罪。"},
+    {q:"网络服务提供者拒不履行信息网络安全管理义务，造成危害后果时，构成什么罪？", o:["拒不履行信息网络安全管理义务罪","玩忽职守罪","帮助信息网络犯罪活动罪","非法经营罪"], a:0, e:"《刑法》第286条之一：网络服务提供者不履行安全管理义务，经责令改正而拒不改正，造成违法信息大量传播等后果的构成本罪。"},
+    {q:"L从背后突然抢B的挎包，出租车司机X去追，快追上时L捡起砖头砸车窗，X打方向盘撞树受重伤。L身上有火药枪，逃跑中撞倒行人致失血过多死亡。如何定性L的行为？", o:["抢夺罪(转化抢劫)、过失致人死亡罪","抢劫罪、故意杀人罪","盗窃罪、故意伤害罪","抢夺罪、危害公共安全罪"], a:0, e:"L先抢夺；在被追捕中使用暴力抗拒抓捕，依《刑法》第269条转化为抢劫罪；逃跑中过失致人死亡。火药枪为量刑情节。"},
+    {q:"摩托车未上锁，A将车开走并转卖。失主找到A，A不承认。A构成什么罪？", o:["盗窃罪","侵占罪","诈骗罪","抢夺罪"], a:0, e:"A以非法占有为目的秘密窃取他人摩托车并转卖，构成盗窃罪。摩托车虽未上锁但仍属他人占有之物。"},
+    {q:"甲借摩托车给乙，乙没还，甲偷了回来。乙赔了4000元给甲，甲怕事情败露又将车以3000元卖给A。甲的行为构成什么罪？", o:["诈骗罪","盗窃罪","盗窃罪和诈骗罪数罪并罚","侵占罪"], a:0, e:"甲偷回已借出的摩托车后隐瞒真相接受乙的赔偿，又转卖获利，以非法占有为目的骗取他人财物，构成诈骗罪。"},
+    {q:"为了索要货款（债务），绑架他人并要求亲属还钱，应定什么罪？", o:["非法拘禁罪","绑架罪","敲诈勒索罪","抢劫罪"], a:0, e:"根据《刑法》第238条第3款，为索取债务非法扣押、拘禁他人的，以非法拘禁罪定罪。索债目的区别于勒索财物的绑架罪。"},
+    {q:"绑架他人后，直接对被绑人要钱，被绑人给家里打电话说工程需要钱，行为人将钱取出。应定什么罪？", o:["抢劫罪","绑架罪","非法拘禁罪","敲诈勒索罪"], a:0, e:"行为人压制被害人反抗后当场索取财物，被害人以欺骗方式让家人打钱，这属于当场取得财物，符合抢劫罪特征。"},
+    {q:"先参加并领导恐怖组织，后又具体实施了杀人等行为，应如何处理？", o:["数罪并罚","从一重罪处罚","以组织、领导恐怖组织罪吸收","以故意杀人罪吸收"], a:0, e:"《刑法》第120条第2款：犯组织、领导、参加恐怖组织罪并实施杀人、爆炸、绑架等犯罪的，数罪并罚。"},
+    {q:"L伙同E潜入A家盗窃，被A发现后追赶到路上，L、E转身殴打A。如何定性？", o:["转化型抢劫（事后抢劫）","盗窃罪和故意伤害罪并罚","抢劫罪","盗窃罪"], a:0, e:"《刑法》第269条：犯盗窃罪，为窝藏赃物、抗拒抓捕或者毁灭罪证而当场使用暴力的，依照抢劫罪定罪处罚。"},
+    {q:"伪证罪的犯罪主体不包括以下哪类人？", o:["辩护人","证人","鉴定人","记录人"], a:0, e:"伪证罪主体是刑事诉讼中的证人、鉴定人、记录人、翻译人。辩护人不属于伪证罪的犯罪主体。"},
+    {q:"行贿罪的主观方面要求行为人具有什么目的？", o:["为谋取不正当利益","为谋取任何利益","为谋取非法利益","为谋取个人利益"], a:0, e:"行贿罪要求'为谋取不正当利益'。被勒索而给予财物、没有获得不正当利益的，不构成行贿。"},
+    {q:"洗钱罪的对象'所得及其产生的收益'，以下哪项正确？", o:["包括犯罪所得及其收益的各种形态","仅指现金","仅指银行存款","仅指违法所得本金"], a:0, e:"洗钱罪的对象是犯罪所得及其产生的收益，包括各种形态——现金、存款、有价证券、实物等均可。"},
+    {q:"下列哪些情形构成挪用公款罪？", o:["以上情形均可构成","个人使用+营利活动+数额较大","个人使用+超过三个月未还+数额较大","个人使用+非法活动"], a:0, e:"挪用公款罪的三种情形：(1)进行非法活动；(2)数额较大、进行营利活动；(3)数额较大、超过三个月未还。以上均可构成。"},
+    {q:"危险驾驶罪包括哪些情形？", o:["追逐竞驶、醉酒驾驶、超载超速、违规运输危化品","仅醉酒驾驶","仅追逐竞驶","醉酒驾驶和无证驾驶"], a:0, e:"《刑法》第133条之一：四种情形——追逐竞驶情节恶劣、醉酒驾驶、校车/旅客运输严重超载超速、违规运输危化品危及公共安全。"},
+    {q:"如何区分故意杀人罪和故意伤害致死？", o:["主观故意内容不同：杀人故意vs伤害故意","仅看死亡结果是否发生","仅看作案工具是否致命","仅看打击部位"], a:0, e:"区分关键在于主观故意内容——故意杀人罪具有剥夺他人生命的故意，故意伤害致死只有损害健康的故意但对死亡有过失。"},
+    {q:"敲诈勒索罪和抢劫罪的核心区别是什么？", o:["暴力程度和实施方式","犯罪数额不同","犯罪对象不同","犯罪主体不同"], a:0, e:"抢劫罪是当场暴力+当场取财（两个'当场'）；敲诈勒索罪是威胁或要挟，可将来取财。"},
+    {q:"贪污罪和挪用公款罪的核心区别是什么？", o:["是否具有非法占有目的","犯罪主体不同","犯罪数额不同","是否利用职务便利"], a:0, e:"贪污罪具有非法占有公共财物的目的（永久占有），挪用公款罪只有暂时使用后归还的意图。"},
+    {q:"L伙同E和F在某路段埋伏，对先后经过的多名路人持刀抢劫。属于抢劫罪的哪种情形？", o:["多次抢劫的加重情形","持枪抢劫","入户抢劫","冒充军警人员抢劫"], a:0, e:"对先后经过的多名路人进行抢劫属于'多次抢劫'的加重情形，处十年以上有期徒刑、无期徒刑或者死刑。"},
+    {q:"L为索要赌债绑架他人，砍了被害人一根手指寄给其妻子。如何定性？", o:["非法拘禁罪（索债型）","绑架罪","故意伤害罪","非法拘禁罪和故意伤害罪"], a:0, e:"为索要赌债而扣押他人，符合《刑法》第238条第3款，以非法拘禁罪定罪。砍手指若达轻伤以上应单独评价。"},
+    {q:"关于高空抛物罪，以下说法正确的是？", o:["从建筑物抛掷物品情节严重的构成犯罪","只有造成人员伤亡才构成犯罪","高空抛物一律构成犯罪","只适用民事责任"], a:0, e:"《刑法》第291条之二：从建筑物或高空抛掷物品，情节严重的，处一年以下有期徒刑、拘役或管制。"},
+    {q:"走私罪中，哪些情形应当数罪并罚？", o:["以暴力、威胁方法抗拒缉私的","走私普通货物后又销售的","走私多种物品的","一次走私多种物品的"], a:0, e:"《刑法》第157条第2款：以暴力、威胁方法抗拒缉私的，以走私罪和妨害公务罪数罪并罚。"},
+    {q:"绑架过程中杀害被绑架人但没拿到钱的，如何定性？", o:["绑架罪（既遂）","故意杀人罪","绑架罪（未遂）","绑架罪和故意杀人罪并罚"], a:0, e:"绑架罪是行为犯，只要实施绑架即既遂。杀害被绑架人的依《刑法》第239条处无期或死刑，属绑架罪加重情节。"},
+    {q:"信用卡诈骗罪的行为方式不包括以下哪项？", o:["使用信用卡正常透支消费","使用伪造的信用卡","冒用他人信用卡","恶意透支"], a:0, e:"信用卡诈骗罪行为方式：使用伪造/作废的信用卡、冒用他人信用卡、恶意透支。正常透支消费不构成。"},
+    {q:"遗弃罪的犯罪对象是？", o:["年老、年幼、患病或其他没有独立生活能力的人","任何人","仅限未成年人","仅限老年人"], a:0, e:"遗弃罪对象是年老、年幼、患病或其他没有独立生活能力的人。负有扶养义务而拒绝扶养，情节恶劣的构成本罪。"}
+  ],
+  "民法": [
+    {q:"《中华人民共和国民法典》共多少编、多少条？", o:["7编1260条","5编1380条","8编1000条","6编1520条"], a:0, e:"民法典共7编1260条，包括总则、物权、合同、人格权、婚姻家庭、继承、侵权责任七编，2021年1月1日起施行。"},
+    {q:"民法调整的法律关系是？", o:["平等主体之间的人身关系和财产关系","国家与公民之间的行政关系","雇主与劳动者之间的劳动关系","国家与法人之间的管理关系"], a:0, e:"《民法典》第2条：民法调整平等主体的自然人、法人和非法人组织之间的人身关系和财产关系。"},
+    {q:"自然人的民事权利能力从何时开始？", o:["出生时","年满8周岁","年满16周岁","年满18周岁"], a:0, e:"《民法典》第13条：自然人从出生时起到死亡时止，具有民事权利能力。"},
+    {q:"完全民事行为能力人的最低年龄是多少？", o:["18周岁","16周岁","20周岁","14周岁"], a:0, e:"18周岁以上为完全民事行为能力人。16周岁以上以自己劳动收入为主要生活来源的，视为完全民事行为能力人。"},
+    {q:"限制民事行为能力人独立实施的哪种行为有效？", o:["纯获利益的行为","购买大额商品的行为","签订劳动合同的行为","处分不动产的行为"], a:0, e:"《民法典》第145条：限制民事行为能力人实施的纯获利益的民事法律行为有效。"},
+    {q:"诉讼时效的一般期间为多久？", o:["3年","2年","1年","5年"], a:0, e:"《民法典》第188条：向人民法院请求保护民事权利的诉讼时效期间为三年。"},
+    {q:"以下哪种情形适用无过错责任原则？", o:["饲养动物致人损害","一般侵权责任","医疗损害责任","物件损害责任"], a:0, e:"饲养动物致人损害适用无过错责任原则。《民法典》第1245条：动物饲养人或管理人应当承担侵权责任。"},
+    {q:"民间借贷利率的最高保护标准是什么？", o:["合同成立时一年期LPR的四倍","年利率24%","年利率36%","年利率15%"], a:0, e:"民间借贷利率不得超过合同成立时一年期贷款市场报价利率（LPR）的四倍。"},
+    {q:"关于格式条款，以下说法正确的是？", o:["提供方需对免责条款进行提示说明","格式条款一律无效","消费者不能提出异议","格式条款无需特别说明"], a:0, e:"《民法典》第496条：提供格式条款的一方应采取合理方式提示对方注意免责条款并予以说明。"},
+    {q:"以下哪种不属于民法典规定的担保物权？", o:["地上权","抵押权","质权","留置权"], a:0, e:"地上权属于用益物权（土地使用权），不属于担保物权。担保物权包括抵押权、质权和留置权。"},
+    {q:"甲乙签订房屋买卖合同后未办理过户登记，房屋所有权归谁？", o:["仍归甲（出卖人）","归乙（买受人）","归国家","甲乙共有"], a:0, e:"《民法典》第209条：不动产物权转让经依法登记发生效力；未经登记不发生效力。合同有效但未登记，所有权仍归甲。"},
+    {q:"胎儿是否具有继承权？", o:["有，娩出时为死体的权利自始不存在","无继承权","仅在出生后有继承权","需由法院判断"], a:0, e:"《民法典》第16条：涉及遗产继承、接受赠与等胎儿利益保护的，胎儿视为具有民事权利能力。"}
+  ],
+  "法理学": [
+    {q:"法律解释的狭义概念强调什么？", o:["只有被授权的国家机关才能进行法律解释","任何人都可以解释法律","只有法官才能解释法律","只有全国人大才能解释法律"], a:0, e:"狭义的法律解释是国家活动，只有被授权的国家机关才能进行法律解释。一般人做的解释（学理解释）没有法律效力。"},
+    {q:"以下哪种不是法律解释的法定分类？", o:["学理解释","立法解释","司法解释","行政解释"], a:0, e:"我国法律解释的正式分类包括：立法解释、司法解释、行政解释和监察解释。学理解释属于非正式解释。"},
+    {q:"司法解释只能由哪些机关作出？", o:["最高人民法院和最高人民检察院","全国人大常委会","国务院","司法部"], a:0, e:"司法解释是指国家司法机关就具体应用法律规范的问题所作的解释。只有最高法和最高检可作出司法解释。"},
+    {q:"文义解释的含义是什么？", o:["通过说明法律条文的字面含义确定法律规范含义","根据立法者的原意进行解释","根据社会需要灵活解释","参考外国立法例进行解释"], a:0, e:"文义解释又称语义解释，是通过说明法律条文的字面含义确定法律规范含义的解释方法，是最基本的法律解释方法。"},
+    {q:"体系解释的基础是什么？", o:["整个法律制度构成一个统一整体","每个法律条文独立存在","法律解释可以脱离法律体系","只需要看单一法条"], a:0, e:"体系解释的基础：整个法律制度构成一个统一整体。没有一个法律规范是独立存在的。"},
+    {q:"法治与人治的根本区别在于？", o:["领导人或统治者的地位不同：法治中法律至高无上","国家大小不同","法律数量的多少","是否有成文法律"], a:0, e:"法治中法律是至高无上的，领导人必须服从法律；人治中统治者具有超越法律的权力。"},
+    {q:"'有法制并不一定有法治'的含义是什么？", o:["法制是制度基础，法治需要民主、人权等价值支撑","法制和法治完全相同","法治不需要法制","有法制就一定有法治"], a:0, e:"法制是静态的制度体系，法治是动态的治理原则。法治以民主为前提、以保障人权为根本价值。"},
+    {q:"法律的生命在于什么？", o:["实施","制定","修改","废止"], a:0, e:"法律的权威在于实施，法律的生命也在于实施。法律制定出来不实施就是一纸空文。"},
+    {q:"科学立法的核心是什么？", o:["尊重和体现客观规律","立法数量足够多","立法速度足够快","法律条文足够详细"], a:0, e:"科学立法的核心在于尊重和体现客观规律，坚持问题导向，使每一部法律法规都切实管用。"},
+    {q:"我国立法程序主要包括几个阶段？", o:["4个：提出、审议、表决、公布","3个：起草、表决、发布","2个：制定、实施","5个：提议、讨论、投票、签署、公布"], a:0, e:"全国人大及其常委会的立法程序分四阶段：法律案的提出、审议（三审制）、表决（过半数通过，宪法修正案需三分之二）、公布。"},
+    {q:"法与道德的主要区别不包括以下哪项？", o:["两者都具有国家强制性","产生方式不同","表现形式不同","实现方式不同"], a:0, e:"法与道德的区别：产生方式、表现形式、实现方式均不同。道德无国家强制力，法律以国家强制力为后盾。"},
+    {q:"法律适用的基本原则不包括？", o:["效率优先原则","司法为民原则","依法独立行使职权原则","司法公正原则"], a:0, e:"法律适用原则包括：司法为民、依法独立行使职权、司法平等、司法公正、司法公开。'效率优先'不是基本原则。"},
+    {q:"中国特色社会主义法律体系分为几个法律部门？", o:["9个","7个","5个","12个"], a:0, e:"9个法律部门：宪法及宪法相关法、民法商法、行政法、经济法、环境资源法、社会法、军事法、刑法、诉讼与非诉讼程序法。"}
+  ],
+  "中国法制史": [
+    {q:"中国历史上最早的成文法典是哪一部？", o:["《法经》（李悝）","《唐律疏议》","《秦律》","《汉九章律》"], a:0, e:"战国时期魏国李悝制定的《法经》是中国历史上第一部较系统的成文法典，分盗法、贼法、囚法、捕法、杂法、具法六篇。"},
+    {q:"《唐律疏议》在中国法制史上的地位是什么？", o:["中华法系的代表性法典","中国最早的成文法典","清朝的代表性法典","民国时期的法典"], a:0, e:"《唐律疏议》是中华法系的代表性法典，对日本、朝鲜、越南等东亚国家影响深远。"},
+    {q:"西周时期法律的重要原则'明德慎罚'的含义是？", o:["崇尚德教，慎重使用刑罚","公开处罚以儆效尤","以重刑威慑犯罪","法律面前人人平等"], a:0, e:"'明德慎罚'是西周重要法律思想，强调以德教为先，慎重对待刑罚。对后世儒家法律思想影响深远。"},
+    {q:"秦朝法制的最主要特点是什么？", o:["严刑峻法，以法为教以吏为师","礼法并重","无为而治","德主刑辅"], a:0, e:"秦朝推行法家思想，以严刑峻法著称，实行'以法为教、以吏为师'的政策。"},
+    {q:"汉代法律形式中，'比'是什么意思？", o:["判例，可作为断案依据的典型案例","制裁","比较","律条"], a:0, e:"汉代法律形式包括律、令、科、比。'比'指已判决的典型案例，可作为断案参考，类似现代判例法。"},
+    {q:"唐朝法律形式中'律令格式'分别指什么？", o:["律=刑法典,令=行政法规,格=修改补充,式=实施细则","律=行政法规,令=刑法典,格=判例,式=法典","律=习惯法,令=皇帝命令,格=格式,式=格式","律=民法,令=刑法,格=诉讼,式=程序"], a:0, e:"唐代法律形式：律是稳定法典（刑事规范为主）；令是行政法规；格是敕令汇编；式是实施细则。"},
+    {q:"明朝'重典治国'方针下的代表性立法是？", o:["《大明律》和《明大诰》","《唐六典》","《宋刑统》","《大清律例》"], a:0, e:"明朝推行'重典治国'，代表性立法是《大明律》和《明大诰》。《明大诰》刑罚远比《大明律》严酷。"},
+    {q:"清末法制改革中'礼法之争'的核心是什么？", o:["是否保留纲常礼教在刑法中的地位","是否采用陪审制度","是否废除死刑","是否实行普选"], a:0, e:"清末修律中'礼法之争'是法理派（沈家本等）与礼教派关于'无夫奸''子孙违犯教令'等条款是否入刑的争论。"},
+    {q:"中国法制史中'五听'制度是指什么？", o:["辞听、色听、气听、耳听、目听","五级审判制度","五种刑罚","五种刑具"], a:0, e:"'五听'是西周审判方法：辞听（观言辞）、色听（观面色）、气听（观呼吸）、耳听（观听力）、目听（观眼神）。最早的审判心理学。"}
+  ],
+  "法治思想": [
+    {q:"习近平法治思想的核心要义集中体现为？", o:["十一个坚持","八个坚持","五个坚持","十三个坚持"], a:0, e:"习近平法治思想的核心要义集中体现为'十一个坚持'，系统阐述了新时代全面依法治国的战略布局。"},
+    {q:"全面依法治国的总目标是什么？", o:["建设中国特色社会主义法治体系，建设社会主义法治国家","完善法律体系","实现社会公平正义","建设法治政府"], a:0, e:"总目标：建设中国特色社会主义法治体系，建设社会主义法治国家。"},
+    {q:"中国特色社会主义法治道路的核心要义不包括？", o:["照搬西方法治模式","坚持党的领导","坚持中国特色社会主义制度","贯彻中国特色社会主义法治理论"], a:0, e:"核心要义：坚持党的领导、坚持中国特色社会主义制度、贯彻中国特色社会主义法治理论。不能照搬西方模式。"},
+    {q:"全面依法治国的工作布局是？", o:["依法治国、依法执政、依法行政共同推进，法治国家、法治政府、法治社会一体建设","仅完善立法","仅严格执法","仅公正司法"], a:0, e:"工作布局：坚持依法治国、依法执政、依法行政共同推进，法治国家、法治政府、法治社会一体建设。"},
+    {q:"关于党的领导与法治的关系，以下哪项正确？", o:["党的领导是社会主义法治最根本的保证，党必须在宪法法律范围内活动","法治可以脱离党的领导","党的领导可以超越法律","法律可以脱离政治"], a:0, e:"党的领导和社会主义法治一致。党领导人民制定宪法法律，党也必须在宪法法律范围内活动。"},
+    {q:"全面依法治国的'十六字方针'是什么？", o:["科学立法、严格执法、公正司法、全民守法","有法可依、有法必依、执法必严、违法必究","依法治国、以德治国、依法行政、公正司法","依法治国、依法执政、依法行政、依法办事"], a:0, e:"新十六字方针：科学立法、严格执法、公正司法、全民守法。"},
+    {q:"法治政府建设的目标是什么？", o:["职能科学、权责法定、执法严明、公开公正、廉洁高效、守法诚信","权力集中、效率优先","减少法律约束、灵活行政","以政策代替法律"], a:0, e:"法治政府建设目标：职能科学、权责法定、执法严明、公开公正、廉洁高效、守法诚信。"}
+  ],
+  "思想道德": [
+    {q:"社会主义核心价值观国家层面的价值目标是什么？", o:["富强、民主、文明、和谐","自由、平等、公正、法治","爱国、敬业、诚信、友善","创新、协调、绿色、开放"], a:0, e:"国家层面：富强、民主、文明、和谐；社会层面：自由、平等、公正、法治；个人层面：爱国、敬业、诚信、友善。"},
+    {q:"道德与法律的主要区别在于？", o:["道德靠内心信念和社会舆论维持，法律靠国家强制力","道德和法律完全相同","道德比法律更容易实施","法律比道德更广泛"], a:0, e:"道德靠社会舆论、传统习俗和内心信念维持，法律以国家强制力为后盾。道德调整范围比法律更广泛。"},
+    {q:"社会主义道德建设的核心是什么？", o:["为人民服务","集体主义","个人主义","爱国"], a:0, e:"社会主义道德建设的核心是为人民服务，原则是集体主义。"},
+    {q:"个人品德的形成主要依靠什么？", o:["个人的自我修养和实践","完全依靠学校教育","只需法律制度约束","遗传因素"], a:0, e:"个人品德形成主要依靠个人的自我修养和实践，通过不断学习、反思、实践培养良好道德品质。"}
+  ]
+};
+
+var ST = { mode:"practice", subject:"全部", idx:0, qs:[], ans:{}, done:{}, ok:{} };
+var PS = 5;
+
+window.showQuiz = function() {
+  hideAllViews();
+  document.getElementById("quizView").classList.add("show");
+  buildFilter();
+  newRound();
+};
+
+function buildFilter(){
+  var s = ["全部"]; for(var k in Q) if(Q.hasOwnProperty(k)) s.push(k);
+  var h = "";
+  for(var i=0;i<s.length;i++){
+    h += '<button class="'+(ST.subject===s[i]?"active":"")+'" onclick="selSubj(\''+s[i]+'\')">'+s[i]+'</button>';
+  }
+  document.getElementById("quizSubjectFilter").innerHTML = h;
+  document.getElementById("quizSubtitle").textContent = ST.subject==="全部"?"全部科目":"科目: "+ST.subject;
+}
+
+window.selSubj = function(s){
+  ST.subject=s; ST.idx=0; ST.ans={}; ST.done={}; ST.ok={};
+  buildFilter(); newRound();
+};
+
+function newRound(){
+  var all=[];
+  if(ST.subject==="全部"){
+    for(var k in Q) if(Q.hasOwnProperty(k)) for(var i=0;i<Q[k].length;i++){ var q=Q[k][i]; q._s=k; all.push(q); }
+  } else {
+    var arr=Q[ST.subject]||[];
+    for(var i=0;i<arr.length;i++){ var q=arr[i]; q._s=ST.subject; all.push(q); }
+  }
+  for(var i=all.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=all[i]; all[i]=all[j]; all[j]=t; }
+  ST.qs=all; ST.idx=0; ST.ans={}; ST.done={}; ST.ok={};
+  renderStats(); renderPage();
+}
+
+window.setQuizMode = function(m){
+  ST.mode=m;
+  document.getElementById("modePractice").classList.toggle("active",m==="practice");
+  document.getElementById("modeExam").classList.toggle("active",m==="exam");
+  ST.idx=0;ST.ans={};ST.done={};ST.ok={};newRound();
+};
+
+function renderStats(){
+  var t=ST.qs.length, d=Object.keys(ST.done).length, c=0;
+  for(var k in ST.ok) if(ST.ok[k]) c++;
+  var h='<div class="quiz-stat"><div class="qs-num">'+t+'</div><div class="qs-label">总题数</div></div>';
+  h+='<div class="quiz-stat"><div class="qs-num">'+d+'</div><div class="qs-label">已答</div></div>';
+  h+='<div class="quiz-stat"><div class="qs-num">'+c+'</div><div class="qs-label">正确</div></div>';
+  if(d>0) h+='<div class="quiz-stat"><div class="qs-num">'+Math.round(c/d*100)+'%</div><div class="qs-label">正确率</div></div>';
+  document.getElementById("quizStats").innerHTML=h;
+  document.getElementById("quizProgressFill").style.width=(t>0?Math.round(d/t*100):0)+"%";
+}
+
+function renderPage(){
+  var t=ST.qs.length;
+  if(t===0){ document.getElementById("quizContent").innerHTML='<div class="quiz-empty"><p>该科目暂无题目</p></div>'; return; }
+  var s=ST.idx, e=Math.min(s+PS,t), h="";
+  for(var i=s;i<e;i++){
+    var q=ST.qs[i], g=i, done=ST.done[g], ok=ST.ok[g], sel=ST.ans[g];
+    h+='<div class="quiz-card" id="qc'+g+'"><div class="quiz-q-num">#'+(g+1)+' · '+q._s+'</div>';
+    h+='<div class="quiz-q-text">'+q.q+'</div>';
+    if(q.o){
+      h+='<div class="quiz-options">';
+      var lb=["A","B","C","D"];
+      for(var j=0;j<q.o.length;j++){
+        var cl="";
+        if(done){ cl+=" disabled"; if(sel===j&&j===q.a) cl+=" correct-answer"; if(sel===j&&j!==q.a) cl+=" wrong-answer"; if(j===q.a&&sel!==q.a) cl+=" correct-answer"; }
+        else if(sel===j) cl+=" selected";
+        h+='<div class="quiz-opt'+cl+'" onclick="pick('+g+','+j+')" id="o'+g+'_'+j+'"><span class="quiz-opt-prefix">'+lb[j]+'.</span><span>'+q.o[j]+'</span></div>';
+      }
+      h+='</div>';
+    }
+    h+='<div class="quiz-explain'+(done?' show':'')+'" id="ex'+g+'">';
+    if(done) h+=(ok?'正确!':'错误（正确答案：'+lb[q.a]+'. '+q.o[q.a]+'）');
+    if(q.e) h+='<br><br>'+q.e;
+    h+='</div>';
+    if(!done) h+='<div class="quiz-actions"><button class="quiz-btn primary" onclick="submit('+g+')">提交答案</button></div>';
+    h+='</div>';
+  }
+  if(t>PS){
+    h+='<div class="quiz-pagination">';
+    var tp=Math.ceil(t/PS), cp=Math.floor(ST.idx/PS);
+    for(var p=0;p<tp;p++) h+='<div class="quiz-page-dot'+(p===cp?' current':'')+'" onclick="goPage('+(p*PS)+')" style="cursor:pointer;width:10px;height:10px"></div>';
+    h+='</div>';
+  }
+  h+='<div class="quiz-actions" style="justify-content:center;margin-top:14px">';
+  if(s>0) h+='<button class="quiz-btn secondary" onclick="prevP()">上一页</button>';
+  if(e<t) h+='<button class="quiz-btn secondary" onclick="nextP()">下一页</button>';
+  h+='<button class="quiz-btn secondary" onclick="newRound()">重新随机</button></div>';
+  var done2=Object.keys(ST.done).length;
+  if(done2>=t&&t>0){
+    var cc=0; for(var k in ST.ok) if(ST.ok[k]) cc++;
+    h+='<div class="quiz-result"><div class="qr-score">'+cc+'/'+t+'</div><div class="qr-label">'+(cc/t>=0.8?'好成绩！':cc/t>=0.6?'继续加油！':'多看看解析吧！')+'</div>';
+    h+='<button class="quiz-btn primary" onclick="newRound()">重新开始</button></div>';
+  }
+  document.getElementById("quizContent").innerHTML=h;
+  renderStats();
+}
+
+window.pick = function(i,o){ if(ST.done[i]) return; ST.ans[i]=o; renderPage(); };
+window.submit = function(i){
+  if(ST.done[i]) return;
+  if(ST.ans[i]===undefined){ showToast("请先选择一个选项"); return; }
+  ST.done[i]=true; ST.ok[i]=ST.ans[i]===ST.qs[i].a;
+  renderPage();
+  setTimeout(function(){ var el=document.getElementById("ex"+i); if(el) el.scrollIntoView({behavior:"smooth",block:"center"}); },100);
+};
+window.prevP = function(){ ST.idx=Math.max(0,ST.idx-PS); renderPage(); };
+window.nextP = function(){ ST.idx=Math.min(ST.qs.length-1,ST.idx+PS); renderPage(); };
+window.goPage = function(i){ ST.idx=i; renderPage(); };
+
+// ===== DOCUMENT GENERATION =====
+var DT = [
+  { id:"purchase", name:"买卖合同", icon:"📋", desc:"货物买卖·设备采购", f:[
+    {k:"buyer",l:"买方（甲方）",p:"公司/个人全称"},
+    {k:"seller",l:"卖方（乙方）",p:"公司/个人全称"},
+    {k:"goods",l:"标的物",p:"货物名称、规格、型号"},
+    {k:"quantity",l:"数量",p:"如：100件"},
+    {k:"price",l:"单价",p:"如：500元/件"},
+    {k:"total",l:"总价",p:"如：50000元"},
+    {k:"delivery",l:"交货地点与日期",p:"如：北京市朝阳区，2026年7月1日前"},
+    {k:"payment",l:"付款方式",p:"如：货到验收合格后30日内付全款"},
+    {k:"breach",l:"违约责任",p:"如：逾期每日按总价0.1%支付违约金"},
+    {k:"extra",l:"其他约定（选填）",p:"",ta:true}
+  ]},
+  { id:"loan", name:"借款合同", icon:"💰", desc:"个人借贷·企业拆借", f:[
+    {k:"lender",l:"出借人（甲方）",p:"全称"},
+    {k:"borrower",l:"借款人（乙方）",p:"全称"},
+    {k:"amount",l:"借款金额",p:"如：人民币壹拾万元整"},
+    {k:"rate",l:"年利率",p:"如：合同成立时一年期LPR的4倍以内"},
+    {k:"term",l:"借款期限",p:"如：2026.7.1至2027.6.30"},
+    {k:"method",l:"还款方式",p:"如：到期一次性还本付息"},
+    {k:"guarantee",l:"担保方式（选填）",p:"如：保证人XXX"},
+    {k:"extra",l:"其他约定（选填）",p:"",ta:true}
+  ]},
+  { id:"employment", name:"劳动合同", icon:"💼", desc:"固定期限·试用期", f:[
+    {k:"employer",l:"用人单位（甲方）",p:"公司全称"},
+    {k:"employee",l:"劳动者（乙方）",p:"姓名"},
+    {k:"position",l:"工作岗位",p:"如：软件工程师"},
+    {k:"salary",l:"工资待遇",p:"如：月薪8000元+绩效"},
+    {k:"term",l:"合同期限",p:"如：3年，试用期3个月"},
+    {k:"location",l:"工作地点",p:"如：北京市海淀区"},
+    {k:"hours",l:"工时制度",p:"如：标准工时制"},
+    {k:"extra",l:"其他约定（选填）",p:"如：保密协议、竞业限制",ta:true}
+  ]},
+  { id:"lease", name:"租赁合同", icon:"🏠", desc:"房屋租赁·设备租赁", f:[
+    {k:"lessor",l:"出租人（甲方）",p:"全称"},
+    {k:"lessee",l:"承租人（乙方）",p:"全称"},
+    {k:"property",l:"租赁物",p:"如：位于XX市XX路的房屋（XX平方米）"},
+    {k:"rent",l:"租金",p:"如：每月3000元"},
+    {k:"term",l:"租期",p:"如：2026.7.1至2027.6.30"},
+    {k:"deposit",l:"押金（选填）",p:"如：一个月租金"},
+    {k:"purpose",l:"租赁用途",p:"如：居住/办公/经营"},
+    {k:"extra",l:"其他约定（选填）",p:"如：不得转租",ta:true}
+  ]},
+  { id:"complaint", name:"民事起诉状", icon:"⚖️", desc:"合同纠纷·侵权纠纷", f:[
+    {k:"plaintiff",l:"原告",p:"姓名/名称、性别、出生日期、身份证号、住址",ta:true},
+    {k:"defendant",l:"被告",p:"姓名/名称、住址",ta:true},
+    {k:"cause",l:"案由",p:"如：买卖合同纠纷"},
+    {k:"claims",l:"诉讼请求",p:"如：1.判令被告支付货款50000元及利息；2.诉讼费由被告承担",ta:true},
+    {k:"facts",l:"事实与理由",p:"详细描述纠纷经过、关键时间节点",ta:true}
+  ]},
+  { id:"answer", name:"民事答辩状", icon:"🛡️", desc:"应诉答辩·反驳主张", f:[
+    {k:"respondent",l:"答辩人",p:"姓名/名称、住址",ta:true},
+    {k:"plaintiff2",l:"被答辩人（原告）",p:"姓名/名称"},
+    {k:"cause",l:"案由",p:"如：买卖合同纠纷"},
+    {k:"defense",l:"答辩意见",p:"针对原告诉讼请求的反驳意见",ta:true},
+    {k:"facts",l:"事实与理由",p:"详细说明异议及依据",ta:true}
+  ]},
+  { id:"appeal", name:"上诉状", icon:"📜", desc:"不服一审·二审程序", f:[
+    {k:"appellant",l:"上诉人",p:"基本信息",ta:true},
+    {k:"appellee",l:"被上诉人",p:"对方当事人信息",ta:true},
+    {k:"case_info",l:"原审案件",p:"如：XX法院(2026)X民初XX号"},
+    {k:"appeal_claims",l:"上诉请求",p:"如：1.撤销原判；2.改判...",ta:true},
+    {k:"grounds",l:"上诉理由",p:"详细说明一审判决不当之处",ta:true}
+  ]},
+  { id:"agency", name:"代理词", icon:"🎤", desc:"庭审陈述·代理意见", f:[
+    {k:"lawyer",l:"代理人",p:"律所名称+律师姓名"},
+    {k:"client",l:"被代理人",p:"当事人姓名/名称"},
+    {k:"case_info",l:"案件信息",p:"如：XX诉XX买卖合同纠纷案"},
+    {k:"position",l:"代理立场",p:"如：支持原告诉讼请求"},
+    {k:"arguments",l:"主要论点",p:"核心论证要点，每条一行",ta:true}
+  ]}
+];
+
+var DS = { sel:null, gen:false, result:"" };
+
+window.showDocGen = function(){
+  hideAllViews();
+  document.getElementById("docView").classList.add("show");
+  DS={sel:null,gen:false,result:""};
+  renderDT();
+  document.getElementById("docFormArea").innerHTML="";
+  document.getElementById("docResultArea").innerHTML="";
+};
+
+function renderDT(){
+  var h="";
+  for(var i=0;i<DT.length;i++){
+    var t=DT[i];
+    h+='<div class="doc-type-card'+(DS.sel&&DS.sel.id===t.id?' selected':'')+'" onclick="selDT(\''+t.id+'\')">';
+    h+='<div class="dt-icon">'+t.icon+'</div><div class="dt-name">'+t.name+'</div><div class="dt-desc">'+t.desc+'</div></div>';
+  }
+  document.getElementById("docTypeGrid").innerHTML=h;
+}
+
+window.selDT = function(id){
+  var t=DT.find(function(d){return d.id===id;});
+  if(!t) return;
+  DS.sel=t; DS.result="";
+  renderDT();
+  var h='<div class="doc-form"><h3>'+t.icon+' '+t.name+'</h3>';
+  for(var i=0;i<t.f.length;i++){
+    var f=t.f[i];
+    h+='<div class="doc-field"><label>'+f.l+'</label>';
+    h+=f.ta?'<textarea id="df_'+f.k+'" placeholder="'+f.p+'" rows="3"></textarea>':'<input type="text" id="df_'+f.k+'" placeholder="'+f.p+'" />';
+    h+='</div>';
+  }
+  h+='<div class="doc-btn-row"><button class="doc-btn primary" onclick="genDoc()">AI 生成文书</button><button class="doc-btn secondary" onclick="clearDF()">清空</button></div></div>';
+  document.getElementById("docFormArea").innerHTML=h;
+  document.getElementById("docResultArea").innerHTML="";
+  document.getElementById("docSubtitle").textContent=t.name+" · 填写关键信息后一键生成";
+};
+
+window.clearDF = function(){
+  if(!DS.sel) return;
+  for(var i=0;i<DS.sel.f.length;i++){ var el=document.getElementById("df_"+DS.sel.f[i].k); if(el) el.value=""; }
+};
+
+window.genDoc = function(){
+  if(DS.gen) return;
+  var t=DS.sel;
+  if(!t){ showToast("请先选择文书类型"); return; }
+  var fd={}, has=false;
+  for(var i=0;i<t.f.length;i++){ var el=document.getElementById("df_"+t.f[i].k); var v=el?el.value.trim():""; fd[t.f[i].k]=v; if(v) has=true; }
+  if(!has){ showToast("请至少填写一项关键信息"); return; }
+  DS.gen=true;
+  document.getElementById("docResultArea").innerHTML='<div class="doc-loading"><div class="spinner"></div><p style="margin-top:12px">正在生成 '+t.name+'...</p><p style="font-size:11px;color:var(--text2)">使用 DeepSeek Flash</p></div>';
+  document.getElementById("docResultArea").scrollIntoView({behavior:"smooth"});
+
+  var parts=["你是中国执业律师，请根据以下信息撰写法律文书。","","【文书类型】"+t.name,"","【关键信息】"];
+  for(var i=0;i<t.f.length;i++) parts.push("- "+t.f[i].l+"："+(fd[t.f[i].k]||"（未提供）"));
+  parts.push("","【要求】使用规范格式，引用法条，关键信息用【】标注核实，末尾加【律师提示】");
+  var prompt=parts.join("\n");
+
+  var apiMsgs=[{role:"system",content:"你是中国执业律师，精通法律文书写作。直接输出完整文书。"},{role:"user",content:prompt}];
+  var fc="", ac=new AbortController();
+
+  fetch("https://api.deepseek.com/v1/chat/completions",{
+    method:"POST",
+    headers:{"Content-Type":"application/json",Authorization:"Bearer "+SETTINGS.apiKey},
+    body:JSON.stringify({model:SETTINGS.model,messages:apiMsgs,stream:true,temperature:0.3,max_tokens:4096}),
+    signal:ac.signal
+  }).then(function(resp){
+    if(!resp.ok) return resp.text().then(function(tx){throw new Error("API "+resp.status+": "+tx.slice(0,200));});
+    var rd=resp.body.getReader(), dc=new TextDecoder(), buf="";
+    function pump(){
+      rd.read().then(function(result){
+        if(result.done){ DS.result=fc||"（空响应）"; DS.gen=false; renderDR(); return; }
+        buf+=dc.decode(result.value,{stream:true});
+        var lines=buf.split("\n"); buf=lines.pop()||"";
+        for(var i=0;i<lines.length;i++){
+          var s=lines[i].trim(); if(!s.startsWith("data:")) continue;
+          var data=s.slice(5).trim(); if(data==="[DONE]") continue;
+          try{ var p=JSON.parse(data), d=(p.choices||[{}])[0].delta; if(d&&d.content){ fc+=d.content; DS.result=fc; renderDR_stream(); } } catch(e){}
+        }
+        pump();
+      }).catch(function(e){
+        if(fc){ DS.gen=false; renderDR(); }
+        else{ DS.gen=false; document.getElementById("docResultArea").innerHTML='<div class="doc-result show"><p style="color:#e74c3c">生成失败: '+e.message+'</p></div>'; }
+      });
+    }
+    pump();
+  }).catch(function(e){
+    if(fc){ DS.result=fc; DS.gen=false; renderDR(); }
+    else if(!(e&&e.name==="AbortError")){ DS.gen=false; document.getElementById("docResultArea").innerHTML='<div class="doc-result show"><p style="color:#e74c3c">请求失败: '+e.message+'</p></div>'; }
+  });
+  DS._ac=ac;
+};
+
+function renderDR_stream(){
+  document.getElementById("docResultArea").innerHTML='<div class="doc-result show"><h3>'+DS.sel.name+'</h3><div class="doc-result-content">'+DS.result+'<span style="display:inline-block;width:2px;height:16px;background:var(--accent);animation:blink .8s infinite;vertical-align:text-bottom"> </span></div></div>';
+  document.getElementById("docResultArea").scrollIntoView({behavior:"smooth"});
+}
+
+function renderDR(){
+  var h='<div class="doc-result show"><h3>'+DS.sel.name+'</h3><div class="doc-result-content">'+DS.result+'</div>';
+  h+='<div class="doc-btn-row"><button class="doc-btn primary" onclick="copyDR()">复制全文</button><button class="doc-btn secondary" onclick="downloadDR()">下载TXT</button><button class="doc-btn secondary" onclick="genDoc()">重新生成</button></div></div>';
+  document.getElementById("docResultArea").innerHTML=h;
+  document.getElementById("docResultArea").scrollIntoView({behavior:"smooth"});
+}
+
+window.copyDR = function(){
+  if(!DS.result) return;
+  navigator.clipboard.writeText(DS.result).then(function(){showToast("已复制全文");}).catch(function(){showToast("复制失败，请手动选择");});
+};
+
+window.downloadDR = function(){
+  if(!DS.result) return;
+  var fn=(DS.sel?DS.sel.name:"法律文书")+"_"+new Date().toISOString().slice(0,10)+".txt";
+  var b=new Blob([DS.result],{type:"text/plain;charset=utf-8"});
+  var a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=fn; a.click(); URL.revokeObjectURL(a.href);
+  showToast("已下载 "+fn);
+};
+
+}catch(e){ console.error("Quiz/DocGen init error:", e); }
+})();
+</script>
+
 </body>
 </html>
